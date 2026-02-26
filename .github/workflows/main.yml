@@ -1,4 +1,4 @@
-name: Run Bot
+name: Run Messenger Bot
 
 on:
   push:
@@ -9,16 +9,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      # Repo clone
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-      - name: Setup Node
+      # Node setup
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      - name: Install Packages
+      # Install packages
+      - name: Install Dependencies
         run: npm install
 
+      # Start Bot
       - name: Start Bot
-    run: |node index.js
-    sleep 999999
+        run: |
+          echo "Starting Bot..."
+          node index.js
+          sleep 999999
