@@ -20,6 +20,5 @@ jobs:
         run: npm install
 
       - name: Start Bot
-    run: |
-    node index.js
+    run: |node index.js
     sleep 999999
